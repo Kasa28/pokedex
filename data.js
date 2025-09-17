@@ -3,7 +3,7 @@ let allPokemons = [];
 let shown = [];
 let pokeIndex = 0;
 const First_Loading_Pokemons = 50;
-const More_Pokemons_Loading = 50;
+const More_Pokemons_Loading = 20;
 
 async function fetchList(offset, size = More_Pokemons_Loading) {
   const url = `${apiBase}?offset=${offset}&limit=${size}`;
