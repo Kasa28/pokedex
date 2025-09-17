@@ -2,7 +2,6 @@ const apiBase = "https://pokeapi.co/api/v2/pokemon";
 let allPokemons = [];
 let shown = [];
 let pokeIndex = 0;
-
 const First_Loading_Pokemons = 50;
 const More_Pokemons_Loading = 50;
 

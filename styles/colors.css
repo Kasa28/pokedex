@@ -40,28 +40,27 @@
 body.bg-all {
   background: linear-gradient(
     135deg,
-    #f08030,  /* fire */
-    #6890f0,  /* water */
-    #78c850,  /* grass */
-    #f8d030,  /* electric */
-    #f85888,  /* psychic */
-    #a8a878,  /* normal */
-    #a8b820,  /* bug */
-    #a040a0,  /* poison */
-    #b8a038,  /* rock */
-    #705898,  /* ghost */
-    #7038f8,  /* dragon */
-    #98d8d8,  /* ice */
-    #c03028,  /* fighting */
-    #ee99ac,  /* fairy */
-    #705848,  /* dark */
-    #b8b8d0   /* steel */
+    #f08030,  
+    #6890f0,  
+    #78c850, 
+    #f8d030,  
+    #f85888,  
+    #a8a878,  
+    #a8b820,  
+    #a040a0,  
+    #b8a038,  
+    #705898,  
+    #7038f8,  
+    #98d8d8,  
+    #c03028,  
+    #ee99ac,  
+    #705848,  
+    #b8b8d0   
   );
   background-size: 400% 400%;
   animation: rainbowShift 20s ease infinite;
 }
 
-/* Für den coolen "fließenden" Effekt */
 @keyframes rainbowShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -81,7 +80,6 @@ body.bg-all {
   transform: translateY(-5px);
 }
 
-/* === Farben für Typen === */
 .pokemonCard.fire {
   background: linear-gradient(135deg, #f08030, #f7b267);
 }
