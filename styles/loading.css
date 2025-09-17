@@ -13,11 +13,6 @@
   display: none;
 }
 
-html, body {
-  height: 100%;
-}
-
-
 .pokemon {
   position: relative;
   height: 100px;
@@ -52,7 +47,6 @@ html, body {
 
 }
 
-/* Spin Animation */
 @keyframes spin {
   from {
     transform: rotate(0deg);

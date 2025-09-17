@@ -1,21 +1,18 @@
 body {
   margin: 0;
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: center;   
+  align-items: center;    
   background: linear-gradient(270deg, #ff6f91, #ffb3c6, #ffe5ec);
   background-size: 600% 600%;
   animation: gradientMove 12s ease infinite;
 }
-
-
 
 @keyframes gradientMove {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 
 .header-center {
   display: flex;
@@ -496,4 +493,23 @@ header {
 .footer-name{
   color: rgb(0, 0, 0);
   font-size: 30px;
+}
+
+.modal-content {
+  background: #4CAF50;
+  border-radius: 15px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;      
+  overflow-y: auto;      
+  box-sizing: border-box;
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  #modalImage {
+    max-width: 100px;  
+    max-height: 100px;
+  }
 }
