@@ -1,0 +1,234 @@
+#pokemonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.pokemonCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.pokemonCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.pokemonCard h3 {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pokemonCard img {
+  max-width: 120px;
+  margin: 20px auto;
+  display: block;
+  transition: transform 0.3s cubic-bezier(.28,.84,.42,1.1);
+}
+
+.pokemonCard img:hover {
+  transform: translateY(-12px);
+}
+
+#pokemonModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+#pokemonModal.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+.modal-content {
+  background: #4CAF50;
+  border-radius: 15px;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.modal-header .nav-btn {
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+.modal-header .close {
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.nav-btn.left {
+  position: absolute;
+  top: 30%;
+  left: 10px;
+}
+
+.nav-btn.right {
+  position: absolute;
+  top: 30%;
+  right: 10px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  border-bottom: 2px solid #ccc;
+  position: relative;
+  gap: 10px;
+  justify-content: center;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+
+.tab-content {
+  margin-top: 10px;
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+#modalImage {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+  object-fit: contain;
+}
+
+.evo-img {
+  width: 60px;
+  height: auto;
+  margin: 5px;
+}
+
+#modalEvolution {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.evo-box {
+  text-align: center;
+}
+
+.evo-box img {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  background: #4caf50;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+}
+
+.info-row .label {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.info-row .value {
+  font-weight: normal;
+}
+
+#modalMoves {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+#modalMoves li {
+  background: #ffffff;
+  color: #333;
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  cursor: default;
+  transition: transform 0.2s;
+}
+
+#modalMoves li:hover {
+  transform: scale(1.1);
+  background: #f2f2f2;
+}
+
+.move-box {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #222;
+  cursor: default;
+  transition: transform 0.2s ease;
+}
+
+.move-box:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.4);
+}

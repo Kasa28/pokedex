@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/colors.css" />
+  <link rel="stylesheet" href="./styles/search.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/pokemon_card.css" />
+  <link rel="stylesheet" href="./styles/loading.css" />
+  <link rel="icon" type="image/png" href="./img/icon.png">
+  <title>Pokédex</title>
+</head>
+
+<body onload="init()">
+  <div id="pageContainer">
+  <div class="header-center">
+    <img src="./img/icon.png" alt="Pokédex Icon" class="logo-icon">
+    <h1>Pokédex</h1>
+  </div>
+
+  <div class="search-filter">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search Pokemon... (min. 3 letters)" 
+      oninput="searchPokemon()">
+    <button onclick="searchPokemon()">🔍</button>
+  </div>
+
+  <nav class="type-filters">
+    <button onclick="filterByType(this, 'normal')">Normal</button>
+    <button onclick="filterByType(this,'fire')">Fire</button>
+    <button onclick="filterByType(this,'water')">Water</button>
+    <button onclick="filterByType(this,'grass')">Grass</button>
+    <button onclick="filterByType(this,'electric')">Electric</button>
+    <button onclick="filterByType(this,'ice')">Ice</button>
+    <button onclick="filterByType(this,'fighting')">Fighting</button>
+    <button onclick="filterByType(this,'poison')">Poison</button>
+    <button onclick="filterByType(this,'ground')">Ground</button>
+    <button onclick="filterByType(this,'flying')">Flying</button>
+    <button onclick="filterByType(this,'psychic')">Psychic</button>
+    <button onclick="filterByType(this,'bug')">Bug</button>
+    <button onclick="filterByType(this,'rock')">Rock</button>
+    <button onclick="filterByType(this,'ghost')">Ghost</button>
+    <button onclick="filterByType(this,'dragon')">Dragon</button>
+    <button onclick="filterByType(this,'dark')">Dark</button>
+    <button onclick="filterByType(this,'steel')">Steel</button>
+    <button onclick="filterByType(this,'fairy')">Fairy</button>
+  </nav>
+
+  <div id="loading" class="hidden">
+    <div class="pokemon"></div>
+  </div>
+
+  <main>
+    <div id="pokemonGrid"></div>
+  </main>
+
+  <div id="pokemonModal" class="modal hidden" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+
+      <div class="modal-header">
+        <h2 id="modalName"></h2>
+        <span class="close" onclick="closeModal()">&times;</span>
+      </div>
+
+
+      <button class="nav-btn left" onclick="prevPokemon()">⬅️</button>
+      <img id="modalImage" alt="Pokemon">
+      <button class="nav-btn right" onclick="nextPokemon()">➡️</button>
+
+      <div class="tabs">
+        <button class="tab active" onclick="cardTab('info')">INFO</button>
+        <button class="tab" onclick="cardTab('stats')">STATS</button>
+        <button class="tab" onclick="cardTab('moves')">MOVES</button>
+        <button class="tab" onclick="cardTab('evolution')">EVOLUTION</button>
+      </div>
+
+      <div id="tab-info" class="tab-content active">
+        <div class="info-box">
+          <span class="label">Type</span>
+          <span id="modalType"></span>
+        </div>
+        <div class="info-box">
+          <span class="label">Height</span>
+          <span id="modalHeight"></span>
+        </div>
+        <div class="info-box">
+          <span class="label">Weight</span>
+          <span id="modalWeight"></span>
+        </div>
+      </div>
+
+      
+
+      <div id="tab-stats" class="tab-content">
+          <div id="modalStats"></div>
+       </div>
+
+       <div id="tab-moves" class="tab-content">
+        <ul id="modalMoves"></ul>
+         </div>
+
+      <div id="tab-evolution" class="tab-content">
+        <div id="modalEvolution"></div>
+      </div>
+    </div>
+  </div>
+
+   <div class="load-more-container">
+    <button id="loadMoreBtn" onclick="loadMore()">Load More</button>
+  </div>
+<footer class="footer">
+  <p class="footer-name">
+    Created by <strong>Kseniya Küntzle</strong> with ❤️ for Pokémon<br>
+    Images from official Pokémon artbook · Data from 
+    <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>
+  </p>
+</footer>
+</div>
+<script src="colors.js"></script>
+<script src="data.js"></script>
+<script src="loading_more.js"></script>
+<script src="search.js"></script>
+<script src="render.js"></script>
+<script src="modal.js"></script>
+</body>
+</html>
