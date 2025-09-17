@@ -13,8 +13,6 @@ function showPokemons() {
   grid.innerHTML = cards.join("");
 }
 
-
-
 function buildCard(p) {
   let types = "";
   for (let i = 0; i < p.types.length; i++) {

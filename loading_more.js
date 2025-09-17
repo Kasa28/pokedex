@@ -4,7 +4,6 @@ async function init() {
   await loadPokemons(data.results);
   showPokemons();
 }
-
 async function loadMore() {
   const numer = allPokemons.length;
   const data = await fetchList(numer);

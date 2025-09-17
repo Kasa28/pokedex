@@ -13,7 +13,6 @@ async function showModal(id) {
   document.getElementById("pokemonModal").classList.remove("hidden");
 }
 
-
 function setModalBackground(p) {
   let bg = "#4caf50";
   if (p.types[0]) {
@@ -36,7 +35,6 @@ function fillInfo(p) {
   document.getElementById("modalHeight").innerHTML = p.height;
   document.getElementById("modalWeight").innerHTML = p.weight;
 }
-
 
 function fillStats(p) {
   let box = document.getElementById("modalStats");
@@ -78,7 +76,6 @@ async function fillEvolution(p) {
     await showEvo(box, c.evolves_to[0].evolves_to[0].species.name)
 }
 
-
 async function showEvo(box, name) {
   let url; url = "https://pokeapi.co/api/v2/pokemon/" + name
   let res; res = await fetch(url)
@@ -90,9 +87,6 @@ async function showEvo(box, name) {
 
   box.innerHTML += "<div class='evo-box'><img src='" + img + "'><p>" + name + "</p></div>"
 }
-
-
-
 
 function cardTab(tab) {
   let tabs = ["info", "stats", "moves", "evolution"];
